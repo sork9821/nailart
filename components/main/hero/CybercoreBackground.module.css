@@ -1,0 +1,88 @@
+.scene {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #050510;
+  overflow: hidden;
+}
+
+.floor {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 45%;
+  background-image:
+    linear-gradient(rgba(0, 200, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 200, 255, 0.07) 1px, transparent 1px);
+  background-size: 50px 50px;
+  transform: perspective(400px) rotateX(40deg);
+  transform-origin: top center;
+}
+
+.mainColumn {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 200, 255, 0.6) 30%,
+    rgba(0, 200, 255, 0.6) 70%,
+    transparent 100%
+  );
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.4);
+}
+
+.lightStreamContainer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.lightBeam {
+  position: absolute;
+  bottom: -20%;
+  height: 18vh;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  animation-name: beamRise, beamFade;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.primary {
+  background: linear-gradient(to top, transparent, rgba(0, 200, 255, 0.85), transparent);
+  box-shadow: 0 0 5px rgba(0, 200, 255, 0.5);
+}
+
+.secondary {
+  background: linear-gradient(to top, transparent, rgba(220, 0, 255, 0.85), transparent);
+  box-shadow: 0 0 5px rgba(220, 0, 255, 0.5);
+}
+
+@keyframes beamRise {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-140vh);
+  }
+}
+
+@keyframes beamFade {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

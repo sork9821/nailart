@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"const d=require\\('./node_modules/next/dist/compiled/@next/font/dist/google/font-data.json'\\); const f=d['Josefin Sans']; console.log\\(JSON.stringify\\(f, null, 2\\)\\)\")"
+    ]
+  }
+}

@@ -1,0 +1,259 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  max-width: 1100px;
+  width: 100%;
+  padding: 0 48px;
+}
+
+/* ── Left: text ── */
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  flex: 1;
+  min-width: 0;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px 6px 8px;
+  background: rgba(0, 200, 255, 0.07);
+  border: 1px solid rgba(0, 200, 255, 0.2);
+  border-radius: 100px;
+  width: fit-content;
+}
+
+.brandName {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #00c8ff;
+}
+
+.headline {
+  font-family: var(--font-josefin), sans-serif;
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 700;
+  line-height: 1.18;
+  color: #fff;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.accent {
+  color: #00c8ff;
+  text-shadow: 0 0 40px rgba(0, 200, 255, 0.55);
+}
+
+.sub {
+  font-size: 16px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.ctaRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.ctaPrimary {
+  padding: 13px 26px;
+  background: #00c8ff;
+  color: #000;
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 28px rgba(0, 200, 255, 0.45);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.ctaPrimary:hover {
+  box-shadow: 0 0 52px rgba(0, 200, 255, 0.72);
+  transform: translateY(-2px);
+}
+
+.ctaSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 22px;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 15px;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.ctaSecondary:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stat strong {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.stat span {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.42);
+  white-space: nowrap;
+}
+
+.statDiv {
+  width: 1px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+}
+
+/* ── Right: thumbnail card stack ── */
+
+.right {
+  flex-shrink: 0;
+}
+
+.cards {
+  position: relative;
+  width: 360px;
+  height: 260px;
+}
+
+.card {
+  position: absolute;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.thumbSvg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.cardBack1 {
+  width: 228px;
+  top: 60px;
+  left: 0;
+  transform: rotate(-9deg);
+  z-index: 1;
+  opacity: 0.62;
+  border: 1px solid rgba(255, 100, 20, 0.25);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.55);
+  animation: floatB1 7s ease-in-out infinite;
+  animation-delay: -1s;
+}
+
+.cardFront {
+  width: 262px;
+  top: 8px;
+  left: 49px;
+  z-index: 3;
+  border: 1px solid rgba(0, 200, 255, 0.38);
+  box-shadow:
+    0 0 0 1px rgba(0, 200, 255, 0.1),
+    0 8px 40px rgba(0, 200, 255, 0.22),
+    0 12px 40px rgba(0, 0, 0, 0.5);
+  animation: floatFront 7s ease-in-out infinite;
+  animation-delay: -3.5s;
+}
+
+.cardBack2 {
+  width: 228px;
+  top: 70px;
+  left: 120px;
+  transform: rotate(8deg);
+  z-index: 2;
+  opacity: 0.58;
+  border: 1px solid rgba(220, 0, 255, 0.22);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.55);
+  animation: floatB2 7s ease-in-out infinite;
+  animation-delay: -5.8s;
+}
+
+@keyframes floatFront {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes floatB1 {
+  0%, 100% { transform: rotate(-9deg) translateY(0); }
+  50% { transform: rotate(-9deg) translateY(-8px); }
+}
+
+@keyframes floatB2 {
+  0%, 100% { transform: rotate(8deg) translateY(0); }
+  50% { transform: rotate(8deg) translateY(-7px); }
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 900px) {
+  .inner {
+    flex-direction: column;
+    gap: 52px;
+    align-items: flex-start;
+    padding: 80px 36px 48px;
+  }
+
+  .right {
+    align-self: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .inner {
+    padding: 72px 24px 40px;
+    gap: 36px;
+  }
+
+  .right {
+    display: none;
+  }
+
+  .sub br {
+    display: none;
+  }
+}
