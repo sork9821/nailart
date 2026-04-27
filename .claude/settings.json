@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(node -e \"const d=require\\('./node_modules/next/dist/compiled/@next/font/dist/google/font-data.json'\\); const f=d['Playwrite NO']; console.log\\(JSON.stringify\\(f, null, 2\\)\\)\")"
+      "Bash(node -e \"const d=require\\('./node_modules/next/dist/compiled/@next/font/dist/google/font-data.json'\\); const f=d['Playwrite NO']; console.log\\(JSON.stringify\\(f, null, 2\\)\\)\")",
+      "mcp__supabase__apply_migration",
+      "Bash(npm install *)"
     ]
   }
 }

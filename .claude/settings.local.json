@@ -1,7 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "Bash(node -e \"const d=require\\('./node_modules/next/dist/compiled/@next/font/dist/google/font-data.json'\\); const f=d['Josefin Sans']; console.log\\(JSON.stringify\\(f, null, 2\\)\\)\")"
+      "Bash(node -e \"const d=require\\('./node_modules/next/dist/compiled/@next/font/dist/google/font-data.json'\\); const f=d['Josefin Sans']; console.log\\(JSON.stringify\\(f, null, 2\\)\\)\")",
+      "Read(//c/Users/sork9/.claude/**)",
+      "Read(//c/Users/sork9/**)",
+      "Bash(claude mcp *)",
+      "Bash(where claude *)",
+      "PowerShell(Get-Command claude -ErrorAction SilentlyContinue)",
+      "PowerShell(Get-ChildItem \"$env:LOCALAPPDATA\\\\Claude\" -ErrorAction SilentlyContinue | Select-Object Name, FullName)"
     ]
   }
 }
